@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>FileShare</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+	<header class="app-header">
+		<div class="container header-inner">
+			<div class="brand">
+				<div class="logo">⇅</div>
+				<div>
+					<h1>FileShare</h1>
+					<p>Fast, simple file sharing on your network</p>
+				</div>
+			</div>
+			<div class="status" id="status">Ready</div>
+		</div>
+	</header>
+
+	<main class="container main-grid">
+		<section class="card">
+			<h2>Available Devices</h2>
+			<div class="device-list" id="deviceList">
+				<div class="empty">Searching for devices...</div>
+			</div>
+		</section>
+
+		<section class="card">
+			<h2>Send a File</h2>
+			<form id="sendForm" class="form">
+				<label class="field">
+					<span>Target device</span>
+					<select id="targetSelect" required>
+						<option value="" disabled selected>Select a device</option>
+					</select>
+				</label>
+				<label class="field">
+					<span>Choose file</span>
+					<input id="fileInput" type="file" required />
+				</label>
+				<button type="submit" class="button">Send File</button>
+			</form>
+			<p class="hint">Received files are saved to your Downloads folder.</p>
+		</section>
+	</main>
+
+	<footer class="container footer">
+		<div>Running on your local network. Keep this tab open to receive files.</div>
+	</footer>
+
+	<script src="/app.js"></script>
+</body>
+</html>
+
+
