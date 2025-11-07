@@ -94,9 +94,21 @@
 		}
 	});
 
-	// Poll peers every 3s
-	fetchPeers();
-	setInterval(fetchPeers, 3000);
+	// Initialize when DOM is ready
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', init);
+	} else {
+		init();
+	}
+	
+	function init() {
+		// Initial render
+		renderPeers();
+		
+		// Poll peers every 3s
+		fetchPeers();
+		setInterval(fetchPeers, 3000);
+	}
 })();
 
 
